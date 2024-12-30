@@ -1,6 +1,11 @@
-function App() {
+import Header from "./components/Header"
+import Hero from "./components/Hero"
 
-  return <div className="bg-red-400">Hii there</div>  
+function App() {
+  return <div>
+    <Header/>
+    <Hero />
+  </div>  
 }
 
 export default App
