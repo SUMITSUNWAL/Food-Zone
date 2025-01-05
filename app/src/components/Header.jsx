@@ -1,6 +1,6 @@
 import Button from "./parts/Button"
 
-const Header = ({data,setFilterData,setButtonData}) => {
+const Header = ({data,setFilterData}) => {
 
   function searchFood(e){
     const searchItem = e.target.value;
@@ -27,10 +27,10 @@ const Header = ({data,setFilterData,setButtonData}) => {
          onChange={searchFood}/>
       </div>
       <div className="flex gap-4 mt-10">
-        <Button name={"All"} setButtonData={setButtonData}/>
-        <Button name={"BreakFast"} setButtonData={setButtonData}/>
-        <Button name={"Lunch"} setButtonData={setButtonData}/>
-        <Button name={"Dinner"} setButtonData={setButtonData}/>
+        <Button name={"All"}/>
+        <Button name={"BreakFast"}/>
+        <Button name={"Lunch"}/>
+        <Button name={"Dinner"}/>
       </div>
     </div>
   )

@@ -1,5 +1,9 @@
+import { useContext } from "react";
+import { contextApi } from "../../App";
 
-const Button = ( {name, setButtonData}) => {
+const Button = ( {name}) => {
+  const {setButtonData} = useContext(contextApi);
+
   function changes(){
     setButtonData(name);
   }

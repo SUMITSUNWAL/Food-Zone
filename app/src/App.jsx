@@ -1,6 +1,8 @@
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import Header from "./components/Header"
 import Hero from "./components/Hero"
+
+export const contextApi = createContext();
 
 function App() {
    const[data,setData] = useState([]);
@@ -30,8 +32,12 @@ function App() {
     },[buttonData,data]);
 
   return <div>
-    <Header data={data} setFilterData={setFilterData} setButtonData={setButtonData}/>
-    <Hero  data={btData} filterData={filterData}/>
+    <contextApi.Provider value={{
+      setButtonData : setButtonData
+    }}>
+      <Header data={data} setFilterData={setFilterData}/>
+      <Hero  data={btData} filterData={filterData}/>
+    </contextApi.Provider>
   </div>  
 }
 
